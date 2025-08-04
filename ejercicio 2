@@ -1,0 +1,51 @@
+// 2.1 Inserta un div vacío
+const div1 = document.createElement('div');
+document.body.appendChild(div1);
+
+// 2.2 Inserta un div con una p dentro
+const div2 = document.createElement('div');
+const p2 = document.createElement('p');
+div2.appendChild(p2);
+document.body.appendChild(div2);
+
+// 2.3 Inserta un div con 6 p usando un loop
+const div3 = document.createElement('div');
+for (let i = 0; i < 6; i++) {
+  const p = document.createElement('p');
+  div3.appendChild(p);
+}
+document.body.appendChild(div3);
+
+// 2.4 Inserta una p con texto 'Soy dinámico!'
+const p4 = document.createElement('p');
+p4.textContent = 'Soy dinámico!';
+document.body.appendChild(p4);
+
+// 2.5 Inserta texto en h2 con clase .fn-insert-here
+document.querySelector('h2.fn-insert-here').textContent = 'Wubba Lubba dub dub';
+
+// 2.6 Crea lista a partir del array
+const apps = ['Facebook', 'Netflix', 'Instagram', 'Snapchat', 'Twitter'];
+const ul = document.createElement('ul');
+apps.forEach(app => {
+  const li = document.createElement('li');
+  li.textContent = app;
+  ul.appendChild(li);
+});
+document.body.appendChild(ul);
+
+// 2.7 Elimina todos los nodos con clase .fn-remove-me
+document.querySelectorAll('.fn-remove-me').forEach(node => node.remove());
+
+// 2.8 Inserta una p entre dos div
+const allDivs = document.querySelectorAll('body > div');
+const middleP = document.createElement('p');
+middleP.textContent = 'Voy en medio!';
+allDivs[0].parentNode.insertBefore(middleP, allDivs[1]);
+
+// 2.9 Inserta una p dentro de todos los div con clase .fn-insert-here
+document.querySelectorAll('div.fn-insert-here').forEach(div => {
+  const p = document.createElement('p');
+  p.textContent = 'Voy dentro!';
+  div.appendChild(p);
+});
